@@ -6,4 +6,4 @@ files = {'image': image_file_descriptor}
 r = requests.post(api_url, files=files)
 print(r.json())
 
-#wut
+#wut pls
