@@ -2,6 +2,7 @@ import image_to_text
 import requests
 import json
 from image import Image
+from text_summarizer import summarize
 
 
 def main():

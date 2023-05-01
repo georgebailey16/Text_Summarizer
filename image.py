@@ -1,4 +1,5 @@
 from image_to_text import image_to_text
+from datetime import datetime
 
 
 class Image:
@@ -8,9 +9,10 @@ class Image:
         self.image_text = image_to_text(image_file)
         self.num_words = len(self.image_text)
         self.text_summary = -1
+        self.upload_time = (datetime.now()).strftime("%d/%m/%Y %H:%M:%S")
 
     def __str__(self):
-        return "Image " + self.image_name + " has " + self.num_words + " words."
+        return "Image " + str(self.image_name) + " has " + str(self.num_words) + " words."
 
     def get_image_text(self):
         return self.image_text
