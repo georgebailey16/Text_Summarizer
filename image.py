@@ -1,5 +1,6 @@
 from image_to_text import image_to_text
 from datetime import datetime
+from PIL import Image as PILImage
 
 
 class Image:
@@ -16,3 +17,10 @@ class Image:
 
     def get_image_text(self):
         return self.image_text
+
+    def get_num_words(self):
+        return self.num_words
+
+    def print_image(self):
+        with PILImage.open(self.image_file) as im:
+            im.show()
