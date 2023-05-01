@@ -1,19 +1,12 @@
 import requests
-
-'''
-api_url = 'https://api.api-ninjas.com/v1/imagetotext'
-image_file_descriptor = open('images/Gettysburg_Address_(poster).jpeg', 'rb')
-files = {'image': image_file_descriptor}
-r = requests.post(api_url, files=files, headers={'X-Api-Key': 'qzxHLFBxoKXQDcfA8RowVQ==bhFZlshUidUT3Vbf'})
-print(r.json())
-'''
+import json
 
 
 def image_to_json(image_file):
     api_url = 'https://api.api-ninjas.com/v1/imagetotext'
-    image_file_descriptor = open(image_file, 'rb')
-    files = {'image': image_file_descriptor}
-    r = requests.post(api_url, files=files, headers={'X-Api-Key': 'qzxHLFBxoKXQDcfA8RowVQ==bhFZlshUidUT3Vbf'})
+    with open(image_file, 'rb') as image_file_descriptor:
+        files = {'image': image_file_descriptor}
+        r = requests.post(api_url, files=files, headers={'X-Api-Key': 'qzxHLFBxoKXQDcfA8RowVQ==bhFZlshUidUT3Vbf'})
 
     return r.json()
 

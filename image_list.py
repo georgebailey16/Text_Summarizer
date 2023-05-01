@@ -7,9 +7,11 @@ class ImageList:
         self.name = list_name
         self.list = []
 
+    def __str__(self):
+        return self.name + " is an Image List containing " + str(len(self.list)) + " images."
+
     def _length(self):
-        num_of_images = len(self.list)
-        return num_of_images
+        return len(self.list)
 
     def add_image_to_list(self, image):
         """
