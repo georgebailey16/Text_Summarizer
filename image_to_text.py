@@ -1,5 +1,4 @@
 import requests
-import json
 
 
 def image_to_json(image_file):
