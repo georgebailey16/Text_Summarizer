@@ -26,11 +26,11 @@ class ImageList:
         if direction == "descending":
             self.list.reverse()
 
-    def time(self):
+    def time_uploaded(self):
         self.list.sort(key=lambda x: datetime.strptime(x.upload_time, '%m/%d/%Y %I:%M %p'))
 
-    def text_length(self):
+    def original_text_length(self):
         self.list.sort(key=lambda x: x.num_words)
 
-    def name(self):
+    def name_of_image(self):
         self.list.sort(key=lambda x: x.image_name)
