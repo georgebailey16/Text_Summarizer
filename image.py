@@ -10,7 +10,7 @@ class Image:
         self.image_name = image_name
         self.image_text = image_to_text(image_file)
         self.num_words = len(self.image_text)
-        self.text_summary = -1
+        self.text_summary = summarize(self.image_file)
         self.upload_time = (datetime.now()).strftime("%d/%m/%Y %H:%M:%S")
 
     def __str__(self):
