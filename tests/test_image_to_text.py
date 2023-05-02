@@ -13,6 +13,6 @@ class ImageText(unittest.TestCase):
         test_image.print_image()
         test_image = Image("Comp 172 Syllabus", "../images/Screen Shot 2023-05-01 at 4.56.47 PM.png")
         print(test_image.get_image_text())
-        # self.assertEqual(226, len(test_image.get_image_text()))
-        # test_image.print_image()
+        self.assertEqual(226, len(test_image.get_image_text()))
+        test_image.print_image()
 

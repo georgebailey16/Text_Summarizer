@@ -1,6 +1,7 @@
 from image_to_text import image_to_text
 from datetime import datetime
 from PIL import Image as PILImage
+from text_summarizer import summarize
 
 
 class Image:
@@ -20,6 +21,9 @@ class Image:
 
     def get_num_words(self):
         return self.num_words
+
+    def get_text_summary(self):
+        return self.text_summary
 
     def print_image(self):
         with PILImage.open(self.image_file) as im:
