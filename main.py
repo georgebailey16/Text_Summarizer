@@ -2,7 +2,7 @@ from image import Image
 from image_list import ImageList
 
 
-def main():
+def setup():
     list_directory = []
     image_directory = []
     breakout = "False"
@@ -68,6 +68,10 @@ def main():
                         break
         else:
             breakout = 'True'
+
+
+def main():
+    setup()
 
 
 main()

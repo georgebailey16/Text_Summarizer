@@ -17,14 +17,26 @@ class Image:
         return "Image " + str(self.image_name) + " has " + str(self.num_words) + " words."
 
     def get_image_text(self):
+        """
+        :return: self.image_text
+        """
         return self.image_text
 
     def get_num_words(self):
+        """
+        :return: self.num_words
+         """
         return self.num_words
 
     def get_text_summary(self):
+        """
+        :return: self.text_summary
+        """
         return self.text_summary
 
     def print_image(self):
+        """
+        :post: uses PIL Image Library to open the image in a new window
+        """
         with PILImage.open(self.image_file) as im:
             im.show()

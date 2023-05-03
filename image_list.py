@@ -1,4 +1,5 @@
 from datetime import datetime
+from image import Image
 
 
 class ImageList:
@@ -13,14 +14,20 @@ class ImageList:
     def _length(self):
         return len(self.list)
 
-    def add_image_to_list(self, image):
+    def get_image_list(self):
+        return self.list
+
+    def add_image_to_list(self, image_name, image_file):
         """
         :param image: Image object
         """
+        '''
         if image not in self.list:
             self.list.append(image)
         else:
             print("Image already contained in " + str(self.name))
+        '''
+        self.list.append(Image(image_name, image_file))
 
     def sort_by(self, sort_param):
         direction = input("Ascending or Descending?: ").lower()
