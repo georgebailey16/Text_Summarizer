@@ -38,7 +38,7 @@ def setup():
                 if list_directory[i].get_list_name() == list_name:
                     for key in list_directory[i].gallery:
                         if query in list_directory[i].gallery[key].get_image_text():
-                            relevant_images.append(list_directory[i].gallery[j])
+                            relevant_images.append(list_directory[i].gallery[key])
             save_list = input("Save as new gallery? (y/n): ").lower()
             if save_list == 'y':
                 new_image_list = ImageList(query)
