@@ -30,9 +30,6 @@ class ImageList:
             print("Image already contained in " + str(self.name))
 
     def sort_by(self):
-        direction = input("Ascending or Descending?: ").lower()
         my_keys = list(self.gallery.keys())
         my_keys.sort()
-        if direction == "descending":
-            my_keys.reverse()
         self.gallery = {i: self.gallery[i] for i in my_keys}

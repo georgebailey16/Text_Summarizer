@@ -10,6 +10,9 @@ def summarize2(image_text_list):
     stop_words = set(stopwords.words("english"))
     freq_table = {}
 
+    if len(image_text_list) == 0:
+        return "No text On Image"
+
     for word in words:
         word = word.lower()
         if word not in stop_words:
