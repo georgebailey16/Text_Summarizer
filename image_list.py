@@ -20,17 +20,14 @@ class ImageList:
     def get_gallery(self):
         return self.gallery
 
-    def add_image_to_list(self, image_name, image_file):
+    def add_image_to_list(self, image):
         """
-        :param image_file: is a file of an image
+        :param image: is an Image object
         """
-        '''
-        if image not in self.list:
-            self.list.append(image)
+        if image.get_image_name() not in self.gallery:
+            self.gallery[image.get_image_name()] = image
         else:
             print("Image already contained in " + str(self.name))
-        '''
-        self.gallery[image_name] = Image(image_name, image_file)
 
     def sort_by(self):
         direction = input("Ascending or Descending?: ").lower()

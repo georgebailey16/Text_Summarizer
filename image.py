@@ -24,6 +24,12 @@ class Image:
         """
         return self.image_text_list
 
+    def get_image_name(self):
+        return self.image_name
+
+    def get_image_text(self):
+        return self.image_text
+
     def get_num_words(self):
         """
         :return: self.num_words
