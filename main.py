@@ -17,15 +17,15 @@ def setup():
             print(image.text_summary)
 
         elif user_input == 2:
-            image_list = ImageList(input("Gallery name: ").lower)
+            image_list = ImageList(input("Gallery name: ").lower())
             list_directory.append(image_list)
             print("Gallery created")
 
         elif user_input == 3:
-            list_name = input("Gallery name: ").lower
+            list_name = input("Gallery name: ").lower()
             for i in range(len(list_directory)):
-                if list_directory[i].name == list_name:
-                    image = Image(input('Image name: '), input('Image file directory: '))
+                if list_directory[i].get_list_name() == list_name:
+                    image = Image(str(input("Image name: ")), str(input("Image file directory: ")))
                     image_directory.append(image)
                     list_directory[i].add_image_to_list(image)
                     print("Image added")

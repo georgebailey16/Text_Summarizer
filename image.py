@@ -8,7 +8,7 @@ class Image:
     def __init__(self, image_name, image_file):
         self.image_file = image_file
         self.image_name = image_name
-        self.image_text_list = image_to_text(image_file)
+        self.image_text_list = image_to_text(self.image_file)
         self.image_text = ""
         for word in self.image_text_list:
             self.image_text += word

@@ -14,6 +14,9 @@ class ImageList:
     def _length(self):
         return len(self.gallery)
 
+    def get_list_name(self):
+        return self.name
+
     def get_gallery(self):
         return self.gallery
 
