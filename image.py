@@ -1,4 +1,5 @@
-from image_to_text import image_to_text
+from image_to_text import image_to_text_list
+from image_to_text import image_to_text_string
 from datetime import datetime
 from PIL import Image as PILImage
 from text_summarizer import summarize
@@ -8,12 +9,10 @@ class Image:
     def __init__(self, image_name, image_file):
         self.image_file = image_file
         self.image_name = image_name
-        self.image_text_list = image_to_text(self.image_file)
-        self.image_text = ""
-        for word in self.image_text_list:
-            self.image_text += word
+        self.image_text_list = image_to_text_list(image_file)
+        self.image_text = image_to_text_string(image_file)
         self.num_words = len(self.image_text)
-        self.text_summary = summarize(self.image_file)
+        self.text_summary = summarize(image_to_text_list(image_file))
         self.upload_time = (datetime.now()).strftime("%d/%m/%Y %H:%M:%S")
 
     def __str__(self):
