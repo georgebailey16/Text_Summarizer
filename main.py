@@ -1,6 +1,6 @@
 from image import Image
 from image_list import ImageList
-
+from text_summarizer import summarize2
 
 def setup():
     list_directory = []
@@ -14,7 +14,12 @@ def setup():
         if user_input == 1:
             image = Image(input('Image name: '), input('Image file directory: '))
             image_directory.append(image)
-            print(image.text_summary)
+            x = image.text_summary
+            y = summarize2(x).split(',')
+            print('---' + image.get_image_name() + '---')
+            for i in range(len(y)):
+                print(y[i])
+
 
         elif user_input == 2:
             image_list = ImageList(input("Gallery name: ").lower())

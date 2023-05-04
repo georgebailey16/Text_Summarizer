@@ -1,4 +1,5 @@
 import requests
+import re
 
 
 def image_to_json(image_file):
@@ -25,6 +26,7 @@ def image_to_text_list(image_file):
         text += word['text']
         text += ' '
     lst = text.split('.')
+    re.split(".|,|!|", text)
     return lst
 
 
