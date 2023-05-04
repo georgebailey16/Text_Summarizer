@@ -8,7 +8,10 @@ class Image:
     def __init__(self, image_name, image_file):
         self.image_file = image_file
         self.image_name = image_name
-        self.image_text = image_to_text(image_file)
+        self.image_text_list = image_to_text(image_file)
+        self.image_text = ""
+        for word in self.image_text_list:
+            self.image_text += word
         self.num_words = len(self.image_text)
         self.text_summary = summarize(self.image_file)
         self.upload_time = (datetime.now()).strftime("%d/%m/%Y %H:%M:%S")
@@ -16,11 +19,11 @@ class Image:
     def __str__(self):
         return "Image " + str(self.image_name) + " has " + str(self.num_words) + " words."
 
-    def get_image_text(self):
+    def get_image_text_list(self):
         """
         :return: self.image_text
         """
-        return self.image_text
+        return self.image_text_list
 
     def get_num_words(self):
         """

@@ -6,20 +6,20 @@ class ImageList:
 
     def __init__(self, list_name):
         self.name = list_name
-        self.list = []
+        self.gallery = {}
 
     def __str__(self):
-        return self.name + " is an Image List containing " + str(len(self.list)) + " images."
+        return self.name + " is an Image List containing " + str(len(self.gallery)) + " images."
 
     def _length(self):
-        return len(self.list)
+        return len(self.gallery)
 
-    def get_image_list(self):
-        return self.list
+    def get_gallery(self):
+        return self.gallery
 
     def add_image_to_list(self, image_name, image_file):
         """
-        :param image: Image object
+        :param image_file: is a file of an image
         """
         '''
         if image not in self.list:
@@ -27,19 +27,12 @@ class ImageList:
         else:
             print("Image already contained in " + str(self.name))
         '''
-        self.list.append(Image(image_name, image_file))
+        self.gallery[image_name] = Image(image_name, image_file)
 
-    def sort_by(self, sort_param):
+    def sort_by(self):
         direction = input("Ascending or Descending?: ").lower()
-        sort_param()
+        my_keys = list(self.gallery.keys())
+        my_keys.sort()
         if direction == "descending":
-            self.list.reverse()
-
-    def time_uploaded(self):
-        self.list.sort(key=lambda x: datetime.strptime(x.upload_time, '%m/%d/%Y %I:%M %p'))
-
-    def original_text_length(self):
-        self.list.sort(key=lambda x: x.num_words)
-
-    def name_of_image(self):
-        self.list.sort(key=lambda x: x.image_name)
+            my_keys.reverse()
+        self.gallery = {i: self.gallery[i] for i in my_keys}

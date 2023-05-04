@@ -36,9 +36,9 @@ def setup():
             query = input("Word or phrase to search: ")
             for i in range(len(list_directory)):
                 if list_directory[i].name == list_name:
-                    for j in range(len(list_directory[i].list)):
-                        if query in list_directory[i].list[j].image_text:
-                            relevant_images.append(list_directory[i].list[j])
+                    for j in range(len(list_directory[i].gallery)):
+                        if query in list_directory[i].gallery[j].image_text:
+                            relevant_images.append(list_directory[i].gallery[j])
             save_list = input("Save as new gallery? (y/n): ").lower()
             if save_list == 'y':
                 new_image_list = ImageList(query)
@@ -54,16 +54,16 @@ def setup():
             list_name = input("Gallery name: ").lower
             for i in range(len(list_directory)):
                 if list_directory[i].name == list_name:
-                    for j in range(len(list_directory[i].list)):
-                        print(str(j+1) + list_directory[i].list[j].image_name)
+                    for j in range(len(list_directory[i].gallery)):
+                        print(str(j+1) + list_directory[i].gallery[j].image_name)
                     num_selected = int(input("Select image to view: "))-1
                     what_to_view = input("View:\n1) Image\n2) Image Text\n3) Image Text Summary")
                     if what_to_view == 1:
-                        list_directory[i].list[num_selected].print_image()
+                        list_directory[i].gallery[num_selected].print_image()
                     elif what_to_view == 2:
-                        print(list_directory[i].list[num_selected].image_text)
+                        print(list_directory[i].gallery[num_selected].image_text)
                     elif what_to_view == 3:
-                        print(list_directory[i].list[num_selected].text_summary)
+                        print(list_directory[i].gallery[num_selected].text_summary)
                     else:
                         break
         else:
