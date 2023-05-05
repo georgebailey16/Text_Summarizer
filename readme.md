@@ -14,6 +14,13 @@ The user has the ability to select from the follow actions:
 * View in gallery
 * Quit Program
 
+<h2>Program Directions to Get Image Directory:</h2>
+1) Import image into "images" folder
+2) Right click on imported image
+3) Select "Copy Path/Reference..."
+4) Select "Absolute Path"
+5) Paste directory when directed by program
+
 <h2>APIs and Libraries Used: </h2>
 * https://api-ninjas.com/api/imagetotext
 * https://www.geeksforgeeks.org/python-text-summarizer/
