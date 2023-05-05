@@ -29,4 +29,4 @@ The user has the ability to select from the follow actions:
 https://docs.google.com/document/d/150biklX-i1yaCkMaAMayiFEprVtbmtOkjZt0cc_0xEI/edit?usp=sharing
 
 <h2>UML Diagram</h2>
-![IMG_9178.png](..%2F..%2FDownloads%2FIMG_9178.png)
+https://docs.google.com/document/d/1i0Pntjxx88mPrzhASt-ApXCQD_qusmcXxn0dfSkOyiE/edit?usp=sharing
