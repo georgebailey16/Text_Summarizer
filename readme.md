@@ -4,7 +4,7 @@ The purpose of this project is to read the text off of an image and summarize it
 
 The project has the ability to create an Image Gallery which can store multiple Image objects.
 These image objects contain various information about the imported image such as file name, the text from the file,
-the summarized text, as well as the ability to display the image,
+the summarized text, as well as the ability to display the image.
 
 The user has the ability to select from the follow actions:
 * Summarize image
