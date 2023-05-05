@@ -2,6 +2,7 @@ from image import Image
 from image_list import ImageList
 from text_summarizer import summarize2
 
+
 def setup():
     list_directory = []
     image_directory = []

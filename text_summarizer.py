@@ -1,4 +1,3 @@
-import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 
@@ -10,6 +9,9 @@ def summarize2(image_text_list):
     words = word_tokenize(image_text_list)
     stop_words = set(stopwords.words("english"))
     freq_table = {}
+
+    if len(image_text_list) == 0:
+        return "No text On Image"
 
     for word in words:
         word = word.lower()
