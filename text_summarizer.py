@@ -1,6 +1,6 @@
-import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
+
 
 def summarize2(image_text_list):
     sentence_value_table = {}

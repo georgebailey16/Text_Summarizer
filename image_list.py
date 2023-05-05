@@ -1,7 +1,3 @@
-from datetime import datetime
-from image import Image
-
-
 class ImageList:
 
     def __init__(self, list_name):
