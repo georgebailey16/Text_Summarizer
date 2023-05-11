@@ -3,6 +3,7 @@ from image import Image
 from image_list import ImageList
 
 
+
 class ImageText(unittest.TestCase):
 
     def test_image(self):
