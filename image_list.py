@@ -25,7 +25,7 @@ class ImageList:
         else:
             print("Image already contained in " + str(self.name))
 
-    def sort_by(self):
+    def sort_a_to_z(self):
         my_keys = list(self.gallery.keys())
         my_keys.sort()
         self.gallery = {i: self.gallery[i] for i in my_keys}

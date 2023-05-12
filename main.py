@@ -10,7 +10,7 @@ def setup():
     while breakout == "False":
         user_input = int(input(
             "Welcome to Image Text Summarizer. Please select from options below:\n1) Summarize image\n2) "
-            "Create gallery\n3) Add image to gallery\n4) Search gallery\n5) View in gallery\n6) Quit\n"))
+            "Create gallery\n3) Add image to gallery\n4) Sort gallery\n5) View in gallery\n6) Quit\n"))
 
         if user_input == 1:
             image = Image(input('Image name: '), input('Image file directory: '))
@@ -37,24 +37,15 @@ def setup():
                     print("Image added")
 
         elif user_input == 4:
-            relevant_images = []
-            list_name = input("Gallery to search (or type directory to search all images): ").lower()
-            query = input("Word or phrase to search: ")
+            list_name = input("Gallery to sort: ").lower()
             for i in range(len(list_directory)):
                 if list_directory[i].get_list_name() == list_name:
+                    list_directory[i].sort_a_to_z()
+                    print('---', list_directory[i].get_list_name(), '---')
+                    num = 1
                     for key in list_directory[i].gallery:
-                        if query in list_directory[i].gallery[key].get_image_text():
-                            relevant_images.append(list_directory[i].gallery[key])
-            save_list = input("Save as new gallery? (y/n): ").lower()
-            if save_list == 'y':
-                new_image_list = ImageList(query)
-                for i in range(len(relevant_images)):
-                    new_image_list.add_image_to_list(relevant_images[i])
-                print("Gallery saved")
-            else:
-                print("Relevant files: ")
-                for i in range(len(relevant_images)):
-                    print(relevant_images[i].get_image_name())
+                        print(num, '.', list_directory[i].gallery[key])
+                        num += 1
 
         elif user_input == 5:
             list_name = input("Gallery name: ").lower()
